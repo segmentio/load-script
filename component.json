@@ -1,0 +1,21 @@
+{
+  "name": "load-script",
+  "repo": "ianstormtaylor/load-script",
+  "description": "Component: loads a Javascript file by appending a script tag to the DOM.",
+  "version": "0.0.1",
+  "keywords": [
+    "script",
+    "load",
+    "javascript"
+  ],
+  "dependencies": {
+    "component/type": "*"
+  },
+  "development": {
+    "component/assert": "*"
+  },
+  "license": "MIT",
+  "scripts": [
+    "index.js"
+  ]
+}
