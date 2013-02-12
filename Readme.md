@@ -5,7 +5,7 @@
 
 ## Installation
 
-    $ component install ianstormtaylor/load-script
+    $ component install segmentio/load-script
 
 ## API
 
