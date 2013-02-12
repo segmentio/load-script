@@ -11,7 +11,7 @@
 
 ### loadScript(src || options, callback)
   Load the given script either by passing a `src` string, or
-  an options object:
+  an `options` object:
 
     {
         src: '//example.com/lib.js', // same as `src` string
