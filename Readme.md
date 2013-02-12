@@ -7,6 +7,27 @@
 
     $ component install segmentio/load-script
 
+## Example
+    
+```js
+var load = require('load-script');
+
+load('//www.google-analytics.com/ga.js');
+```
+
+Loads in the Google Analytics library.
+
+```js
+var load = require('load-script');
+
+load({
+  http  : 'http://www.google-analytics.com/ga.js',
+  https : 'https://ssl.google-analytics.com/ga.js'
+});
+```
+
+Loads in the right URL depending on the protocol.
+
 ## API
 
 ### loadScript(src || options, callback)
