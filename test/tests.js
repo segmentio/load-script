@@ -14,8 +14,9 @@
 
     test('returns the script element', function () {
         var script = load('//cdnjs.cloudflare.com/ajax/libs/dropbox.js/0.9.0/dropbox.min.js');
-        assert(type(script) === 'object');
+        assert(type(script) === 'element');
     });
+
 
     test('can load protocol-specific src', function (done) {
         var http = 'http://cdnjs.cloudflare.com/ajax/libs/datejs/1.0/date.min.js';
