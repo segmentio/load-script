@@ -7,7 +7,8 @@ module.exports = function loadScript (options, callback) {
     // Allow for the simplest case, just passing a `src` string.
     if (type(options) === 'string') options = { src : options };
 
-    var https = document.location.protocol === 'https:';
+    var https = document.location.protocol === 'https:' ||
+                document.location.protocol === 'chrome-extension:';
 
     // If you use protocol relative URLs, third-party scripts like Google
     // Analytics break when testing with `file:` so this fixes that.
