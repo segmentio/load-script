@@ -2,20 +2,14 @@
   "name": "load-script",
   "repo": "segmentio/load-script",
   "description": "Component: loads a Javascript file by appending a script tag to the DOM.",
-  "version": "0.0.1",
-  "keywords": [
-    "script",
-    "load",
-    "javascript"
-  ],
+  "version": "0.0.2",
+  "keywords": ["script", "load", "javascript"],
+  "license": "MIT",
   "dependencies": {
     "component/type": "*"
   },
   "development": {
     "component/assert": "*"
   },
-  "license": "MIT",
-  "scripts": [
-    "index.js"
-  ]
+  "scripts": ["index.js"]
 }
