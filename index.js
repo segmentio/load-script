@@ -35,10 +35,17 @@ module.exports = function loadScript (options, callback) {
     // https://github.com/thirdpartyjs/thirdpartyjs-code/blob/master/examples/templates/02/loading-files/index.html
     if (callback && type(callback) === 'function') {
         if (script.addEventListener) {
-            script.addEventListener('load', callback, false);
+            script.addEventListener('load', function (event) {
+                callback(null, event);
+            }, false);
+            script.addEventListener('error', function (event) {
+                callback(new Error('Failed to load the script.'), event);
+            }, false);
         } else if (script.attachEvent) {
-            script.attachEvent('onreadystatechange', function () {
-                if (/complete|loaded/.test(script.readyState)) callback();
+            script.attachEvent('onreadystatechange', function (event) {
+                if (/complete|loaded/.test(script.readyState)) {
+                    callback(null, event);
+                }
             });
         }
     }
