@@ -41,7 +41,7 @@ Loads in the right URL depending on the protocol.
     }
   
   You can also pass in a `callback` that will be called when
-  the script loads successfully.
+  the script loads with `err, event`.
 
 ## License
 
