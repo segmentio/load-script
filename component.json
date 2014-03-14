@@ -6,6 +6,7 @@
   "keywords": ["script", "load", "javascript"],
   "license": "MIT",
   "dependencies": {
+    "segmentio/script-onload": "*",
     "component/type": "*"
   },
   "development": {
