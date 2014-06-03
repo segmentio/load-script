@@ -22,11 +22,13 @@ module.exports = function loadScript (options, callback) {
     if (https && options.https) options.src = options.https;
     else if (!https && options.http) options.src = options.http;
 
+    if (false !== options.async) options.async = true;
+
     // Make the `<script>` element and insert it before the first script on the
     // page, which is guaranteed to exist since this Javascript is running.
     var script = document.createElement('script');
     script.type = 'text/javascript';
-    script.async = true;
+    script.async = options.async;
     script.src = options.src;
 
     var firstScript = document.getElementsByTagName('script')[0];
