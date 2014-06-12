@@ -29,15 +29,16 @@ module.exports = function loadScript (options, callback) {
     script.async = true;
     script.src = options.src;
 
-    var firstScript = document.getElementsByTagName('script')[0];
-    firstScript.parentNode.insertBefore(script, firstScript);
-
     // If we have a callback, attach event handlers, even in IE. Based off of
     // the Third-Party Javascript script loading example:
     // https://github.com/thirdpartyjs/thirdpartyjs-code/blob/master/examples/templates/02/loading-files/index.html
     if (callback && type(callback) === 'function') {
         onload(script, callback);
     }
+
+    // Append after event listeners are attached for IE.
+    var firstScript = document.getElementsByTagName('script')[0];
+    firstScript.parentNode.insertBefore(script, firstScript);
 
     // Return the script element in case they want to do anything special, like
     // give it an ID or attributes.
