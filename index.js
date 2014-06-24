@@ -4,6 +4,7 @@
  */
 
 var onload = require('script-onload');
+var tick = require('next-tick');
 var type = require('type');
 
 /**
@@ -47,9 +48,11 @@ module.exports = function loadScript(options, fn){
     onload(script, fn);
   }
 
-  // Append after event listeners are attached for IE.
-  var firstScript = document.getElementsByTagName('script')[0];
-  firstScript.parentNode.insertBefore(script, firstScript);
+  tick(function(){
+    // Append after event listeners are attached for IE.
+    var firstScript = document.getElementsByTagName('script')[0];
+    firstScript.parentNode.insertBefore(script, firstScript);
+  });
 
   // Return the script element in case they want to do anything special, like
   // give it an ID or attributes.
