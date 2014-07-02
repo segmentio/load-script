@@ -12,7 +12,7 @@
   "dependencies": {
     "segmentio/script-onload": "*",
     "component/type": "*",
-    "timoxley/next-tick": "~0.0.2"
+    "timoxley/next-tick": "0.0.2"
   },
   "development": {
     "component/assert": "*"
