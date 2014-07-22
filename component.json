@@ -2,7 +2,7 @@
   "name": "load-script",
   "repo": "segmentio/load-script",
   "description": "Component: loads a Javascript file by appending a script tag to the DOM.",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "keywords": [
     "script",
     "load",
@@ -12,7 +12,7 @@
   "dependencies": {
     "segmentio/script-onload": "*",
     "component/type": "*",
-    "timoxley/next-tick": "~0.0.2"
+    "timoxley/next-tick": "0.0.2"
   },
   "development": {
     "component/assert": "*"
