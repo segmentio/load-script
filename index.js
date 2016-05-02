@@ -1,11 +1,10 @@
-
 /**
  * Module dependencies.
  */
 
 var onload = require('script-onload');
 var tick = require('next-tick');
-var type = require('type');
+var type = require('component-type');
 
 /**
  * Expose `loadScript`.
@@ -15,7 +14,7 @@ var type = require('type');
  * @api public
  */
 
-module.exports = function loadScript(options, fn){
+module.exports = function loadScript(options, fn) {
   if (!options) throw new Error('Cant load nothing...');
 
   // Allow for the simplest case, just passing a `src` string.

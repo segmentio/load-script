@@ -1,14 +1,36 @@
+#
+# Binaries
+#
 
-build: components index.js
-	@component build --dev
+KARMA := node_modules/.bin/karma
 
-components: component.json
-	@component install --dev
+#
+# Tasks
+#
 
+# Install node modules.
+node_modules: package.json $(wildcard node_modules/*/package.json)
+	@npm install
+	@touch $@
+
+# Install dependencies.
+install: node_modules
+
+# Remove temporary files and build artifacts.
 clean:
-	rm -fr build components template.js
+	@rm -rf *.log
+.PHONY: clean
 
-test: build
-	open test/index.html
+# Remove temporary files, build artifacts, and vendor dependencies.
+distclean: clean
+	@rm -rf node_modules
+.PHONY: distclean
 
-.PHONY: clean test
+test-karma: node_modules
+	@$(KARMA) start
+.PHONY: test-karma
+
+# Default test target.
+test: test-karma
+.PHONY: test
+.DEFAULT_GOAL = test

@@ -1,0 +1,33 @@
+{
+  "name": "load-script",
+  "description": "Load a script file dynamically.",
+  "version": "1.0.0-pre.1",
+  "license": "MIT",
+  "keywords": [
+    "DOM",
+    "iframe",
+    "load"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/segmentio/load-script.git"
+  },
+  "dependencies": {
+    "component-type": "^1.2.0",
+    "next-tick": "^0.2.2",
+    "script-onload": "^1.0.2"
+  },
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "karma": "^0.13.22",
+    "karma-browserify": "^5.0.4",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-mocha": "^1.0.1",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "karma-sauce-launcher": "^1.0.0",
+    "karma-spec-reporter": "0.0.26",
+    "mocha": "^2.2.5",
+    "phantomjs-prebuilt": "^2.1.7",
+    "watchify": "^3.7.0"
+  }
+}
