@@ -1,3 +1,5 @@
+'use strict';
+
 var assert = require('assert');
 var load = require('../');
 var type = require('component-type');
@@ -8,7 +10,7 @@ var modernIt = isIE8OrOlder ? xit : it;
 
 describe('load-script', function() {
   it('should load src string with callback', function(done) {
-    load('//cdnjs.cloudflare.com/ajax/libs/angular.js/1.1.1/angular.min.js', function (error, event) {
+    load('//cdnjs.cloudflare.com/ajax/libs/angular.js/1.1.1/angular.min.js', function(error) {
       assert(!error);
       done();
     });
@@ -22,7 +24,7 @@ describe('load-script', function() {
   it('should load protocol-specific src', function(done) {
     var http = 'http://cdnjs.cloudflare.com/ajax/libs/datejs/1.0/date.min.js';
     var https = 'https://cdnjs.cloudflare.com/ajax/libs/datejs/1.0/date.min.js';
-    var script = load({ http: http, https: https }, function(error, event) {
+    var script = load({ http: http, https: https }, function(error) {
       assert(!error);
       done();
     });
@@ -30,7 +32,7 @@ describe('load-script', function() {
   });
 
   modernIt('should pass an error to callback when the script fails to load', function(done) {
-    load('//cdnjs.cloudflare.com/ajax/libs/angular.js/1.1.1/nonexistent.min.js', function(error, event) {
+    load('//cdnjs.cloudflare.com/ajax/libs/angular.js/1.1.1/nonexistent.min.js', function(error) {
       assert(error);
       done();
     });
