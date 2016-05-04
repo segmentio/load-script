@@ -81,9 +81,7 @@ module.exports = {
 
   coverageReporter: {
     reporters: [
-      { type: 'text' },
       { type: 'lcov' }
-    ],
-    dir: process.env.COVERAGE_DIR || 'coverage'
+    ]
   }
 };
