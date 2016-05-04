@@ -10,8 +10,24 @@ KARMA := node_modules/.bin/karma
 ##
 
 LIBS = index.js
+SUPPORT = $(wildcard karma.conf*.js)
 TESTS = $(shell find test -type f -name "*.js")
-ALL_FILES = $(LIBS) $(TESTS)
+ALL_FILES = $(LIBS) $(TESTS) $(SUPPORT)
+
+##
+# Program options/flags
+##
+
+# A list of options to pass to Karma
+# Overriding this overwrites all options specified in this file (e.g. BROWSERS)
+KARMA_FLAGS ?=
+
+# A list of Karma browser launchers to run
+# http://karma-runner.github.io/0.13/config/browsers.html
+BROWSERS ?=
+ifdef BROWSERS
+KARMA_FLAGS += --browsers $(BROWSERS)
+endif
 
 ##
 # Tasks
@@ -27,12 +43,12 @@ install: node_modules
 
 # Remove temporary files and build artifacts.
 clean:
-	@rm -rf *.log
+	rm -rf *.log coverage
 .PHONY: clean
 
 # Remove temporary files, build artifacts, and vendor dependencies.
 distclean: clean
-	@rm -rf node_modules
+	rm -rf node_modules
 .PHONY: distclean
 
 # Lint JavaScript source files.
@@ -45,11 +61,12 @@ fmt: install
 	@$(ESLINT) --fix $(ALL_FILES)
 .PHONY: fmt
 
-test-karma: install
-	@$(KARMA) start
-.PHONY: test-karma
+# Run unit tests.
+test-unit: install
+	@$(KARMA) start $(KARMA_FLAGS)
 
 # Default test target.
-test: lint test-karma
+test: lint test-unit
+
 .PHONY: test
 .DEFAULT_GOAL = test
