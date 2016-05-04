@@ -21,10 +21,13 @@
   "devDependencies": {
     "@segment/eslint-config": "^3.0.0",
     "browserify": "^13.0.0",
+    "browserify-istanbul": "^2.0.0",
     "eslint": "^2.9.0",
+    "istanbul": "^0.4.3",
     "karma": "^0.13.22",
     "karma-browserify": "^5.0.4",
     "karma-chrome-launcher": "^1.0.1",
+    "karma-coverage": "^1.0.0",
     "karma-mocha": "^1.0.1",
     "karma-phantomjs-launcher": "^1.0.0",
     "karma-sauce-launcher": "^1.0.0",

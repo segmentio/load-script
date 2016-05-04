@@ -1,6 +1,8 @@
 machine:
   node:
     version: 4
+  environment:
+    COVERAGE_DIR: $CIRCLE_ARTIFACTS/coverage
 
 test:
   override:

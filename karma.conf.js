@@ -10,14 +10,33 @@ module.exports = function(config) {
 
     frameworks: ['browserify', 'mocha'],
 
-    reporters: ['spec'],
+    reporters: ['spec', 'coverage'],
 
     preprocessors: {
+      'index.js': 'browserify',
       'test/**/*.js': 'browserify'
     },
 
     browserify: {
-      debug: true
+      debug: true,
+      transform: [
+        [
+          'browserify-istanbul',
+          {
+            instrumenterConfig: {
+              embedSource: true
+            }
+          }
+        ]
+      ]
+    },
+
+    coverageReporter: {
+      reporters: [
+        { type: 'text' },
+        { type: 'html' },
+        { type: 'json' }
+      ]
     }
   };
 

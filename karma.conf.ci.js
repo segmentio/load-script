@@ -77,5 +77,13 @@ module.exports = {
 
   sauceLabs: {
     testName: require('./package.json').name
+  },
+
+  coverageReporter: {
+    reporters: [
+      { type: 'text' },
+      { type: 'lcov' }
+    ],
+    dir: process.env.COVERAGE_DIR || 'coverage'
   }
 };
