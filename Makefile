@@ -36,16 +36,16 @@ distclean: clean
 .PHONY: distclean
 
 # Lint JavaScript source files.
-lint: node_modules
+lint: install
 	@$(ESLINT) $(ALL_FILES)
 .PHONY: lint
 
 # Attempt to fix linting errors.
-fmt: node_modules
+fmt: install
 	@$(ESLINT) --fix $(ALL_FILES)
 .PHONY: fmt
 
-test-karma: node_modules
+test-karma: install
 	@$(KARMA) start
 .PHONY: test-karma
 
