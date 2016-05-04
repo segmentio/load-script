@@ -19,7 +19,9 @@
     "script-onload": "^1.0.2"
   },
   "devDependencies": {
+    "@segment/eslint-config": "^3.0.0",
     "browserify": "^13.0.0",
+    "eslint": "^2.9.0",
     "karma": "^0.13.22",
     "karma-browserify": "^5.0.4",
     "karma-chrome-launcher": "^1.0.1",

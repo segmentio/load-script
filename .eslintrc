@@ -1,0 +1,7 @@
+{
+  "extends": "@segment/eslint-config/browser/legacy",
+
+  "env": {
+    "node": true
+  }
+}
