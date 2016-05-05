@@ -33,6 +33,7 @@
     "karma-sauce-launcher": "^1.0.0",
     "karma-spec-reporter": "0.0.26",
     "mocha": "^2.2.5",
+    "npm-check": "^5.2.1",
     "phantomjs-prebuilt": "^2.1.7",
     "watchify": "^3.7.0"
   }

@@ -2,6 +2,7 @@
 # Binaries
 ##
 
+DEPCHECK := node_modules/.bin/npm-check
 ESLINT := node_modules/.bin/eslint
 KARMA := node_modules/.bin/karma
 
@@ -51,6 +52,11 @@ distclean: clean
 	rm -rf node_modules
 .PHONY: distclean
 
+# Check for stale or missing dependencies.
+check-dependencies:
+	@$(DEPCHECK) --production --no-color --no-emoji
+	@echo
+
 # Lint JavaScript source files.
 lint: install
 	@$(ESLINT) $(ALL_FILES)
@@ -66,7 +72,6 @@ test-unit: install
 	@$(KARMA) start $(KARMA_FLAGS)
 
 # Default test target.
-test: lint test-unit
-
+test: lint check-dependencies test-unit
 .PHONY: test
 .DEFAULT_GOAL = test
