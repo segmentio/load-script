@@ -1,0 +1,16 @@
+machine:
+  node:
+    version: 4
+
+dependencies:
+  pre:
+    - npm -g install codecov
+  override:
+    - make install
+
+test:
+  override:
+    - make test
+  post:
+    - cp -R coverage $CIRCLE_ARTIFACTS/
+    - codecov
