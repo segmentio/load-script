@@ -7,13 +7,13 @@ Component which asynchronously loads a JavaScript file by appending a script tag
 ## Installation
 
 ```sh
-$ component install segmentio/load-script
+$ npm install @segment/load-script
 ```
 
 ## Examples
     
 ```js
-var load = require('load-script');
+var load = require('@segment/load-script');
 
 load('//www.google-analytics.com/ga.js');
 ```
@@ -21,7 +21,7 @@ load('//www.google-analytics.com/ga.js');
 Load in a URL depending on the current protocol.
 
 ```js
-var load = require('load-script');
+var load = require('@segment/load-script');
 
 load({
   http: 'http://www.google-analytics.com/ga.js',
