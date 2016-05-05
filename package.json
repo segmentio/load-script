@@ -9,10 +9,19 @@
     "load",
     "script"
   ],
+  "scripts": {
+    "test": "make test"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/segmentio/load-script.git"
+    "url": "git+https://github.com/segmentio/load-script.git"
   },
+  "author": "Segment <friends@segment.com>",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/segmentio/load-script/issues"
+  },
+  "homepage": "https://github.com/segmentio/load-script#readme",
   "dependencies": {
     "component-type": "^1.2.0",
     "next-tick": "^0.2.2",

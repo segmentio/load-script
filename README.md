@@ -44,7 +44,3 @@ Load the given script either by passing a `src` string, or an `options` object:
 ```
   
 You can also pass in a `callback` that will be called when the script loads with `err, event`.
-
-## License
-
-MIT
