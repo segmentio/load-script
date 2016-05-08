@@ -1,7 +1,7 @@
 {
   "name": "@segment/load-script",
   "description": "Dynamically and asynchronously load a script file.",
-  "version": "1.0.0-pre.1",
+  "version": "1.0.0",
   "keywords": [
     "DOM",
     "iframe",
