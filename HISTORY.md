@@ -1,3 +1,8 @@
+1.0.1 / 2016-05-09
+==================
+
+ * Add npm authing to circle.yml (for automatic tag publishing)
+
 1.0.0 / 2016-05-07
 ==================
 
