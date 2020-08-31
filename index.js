@@ -40,7 +40,7 @@ function loadScript(options, cb) {
   }
 
   // Make the `<script>` element and insert it before the first script on the
-  // page, which is guaranteed to exist since this Javascript is running.
+  // page, which is guaranteed to exist since this JavaScript is running.
   var script = document.createElement('script');
   script.type = 'text/javascript';
   script.async = true;
