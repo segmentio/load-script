@@ -1,5 +1,8 @@
 # load-script
 
+> **Note**  
+> Segment has paused maintenance on this project, but may return it to an active status in the future. Issues and pull requests from external contributors are not being considered, although internal contributions may appear from time to time. The project remains available under its open source license for anyone to use.
+
 [![Sauce Test Status](https://saucelabs.com/buildstatus/sio_load-script)](https://saucelabs.com/u/sio_load-script)
 
 Component which asynchronously loads a JavaScript file by appending a script tag to the DOM.
